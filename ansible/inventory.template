@@ -1,0 +1,13 @@
+# Ansible Inventory Template
+# This will be generated dynamically by Terraform
+
+[app_servers]
+# ${app_server_private_ip} ansible_user=ubuntu ansible_ssh_private_key_file=~/.ssh/${key_name}.pem
+
+[bastion]
+# ${bastion_public_ip} ansible_user=ubuntu ansible_ssh_private_key_file=~/.ssh/${key_name}.pem
+
+[app_servers:vars]
+# ansible_ssh_common_args='-o ProxyCommand="ssh -W %h:%p -q ubuntu@${bastion_public_ip}"'
+ansible_host_key_checking=False
+ansible_ssh_common_args='-o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null'

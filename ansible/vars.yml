@@ -1,0 +1,29 @@
+---
+# Application Variables
+git_repo: "https://github.com/rivindu02/School-Management-API.git"
+
+# MongoDB Configuration
+mongo_uri: "mongodb://mongo:27017/school_db"
+
+# Application Port
+app_port: 3000
+
+# Docker Configuration
+docker_packages:
+  - docker.io
+
+# System Packages
+system_packages:
+  - git
+  - curl
+  - wget
+  - htop
+  - net-tools
+  - python3
+  - python3-pip
+
+# Application Directory
+app_directory: /app
+
+# Log file
+setup_log_file: /var/log/app-setup.log
